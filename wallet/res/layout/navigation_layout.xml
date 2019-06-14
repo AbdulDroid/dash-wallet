@@ -12,35 +12,73 @@
     app:menu="@menu/main_drawer">
 
     <RelativeLayout
-        android:id="@+id/uphold_account_section"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white">
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom">
 
-        <View style="@style/ListSeparator"/>
-
-        <ImageView
-            android:id="@+id/uphold_logo"
-            android:layout_width="22.77dp"
-            android:layout_height="32dp"
-            android:src="@drawable/uphold_logo"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="18dp"
-            android:layout_marginBottom="18dp"/>
-
-        <TextView
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/uphold_logo"
-            android:layout_toEndOf="@id/uphold_logo"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/uphold_account_section"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/uphold_account"
-            android:layout_marginLeft="14dp"
-            android:layout_marginStart="14dp"
-            style="@style/MontserratMedium.DB.14"/>
+            android:background="@android:color/white">
+
+            <View style="@style/ListSeparator"/>
+
+            <ImageView
+                android:id="@+id/uphold_logo"
+                android:layout_width="22.77dp"
+                android:layout_height="32dp"
+                android:src="@drawable/uphold_logo"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="18dp"/>
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/uphold_logo"
+                android:layout_toEndOf="@id/uphold_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/uphold_account"
+                android:layout_marginLeft="14dp"
+                android:layout_marginStart="14dp"
+                style="@style/MontserratMedium.DB.14"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/test_funding_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/uphold_account_section"
+            android:background="@android:color/white">
+
+            <View style="@style/ListSeparator"/>
+
+            <ImageView
+                android:id="@+id/test_fund_logo"
+                android:layout_width="22.77dp"
+                android:layout_height="32dp"
+                android:src="@drawable/app_icon"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="18dp"/>
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/test_fund_logo"
+                android:layout_toEndOf="@id/test_fund_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_funding"
+                android:layout_marginLeft="14dp"
+                android:layout_marginStart="14dp"
+                style="@style/MontserratMedium.DB.14"/>
+
+        </RelativeLayout>
 
     </RelativeLayout>
 

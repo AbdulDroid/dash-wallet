@@ -67,7 +67,6 @@ import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableList;
 import com.squareup.okhttp.HttpUrl;
 
-import org.bitcoinj.core.InstantSend;
 import org.bitcoinj.core.Sha256Hash;
 import org.bitcoinj.core.Transaction;
 import org.bitcoinj.core.VerificationException;
@@ -77,6 +76,8 @@ import org.bitcoinj.wallet.Wallet;
 import org.bitcoinj.wallet.Wallet.BalanceType;
 import org.dash.wallet.common.Configuration;
 import org.dash.wallet.common.ui.DialogBuilder;
+import org.dash.wallet.integration.nepsium.core.ConstantUtils;
+import org.dash.wallet.integration.nepsium.ui.KurePayActivity;
 import org.dash.wallet.integration.uphold.data.UpholdClient;
 import org.dash.wallet.integration.uphold.ui.UpholdAccountActivity;
 import org.dash.wallet.integration.uphold.ui.UpholdSplashActivity;
@@ -257,6 +258,13 @@ public final class WalletActivity extends AbstractBindServiceActivity
             public void onClick(View v) {
                 startUpholdActivity();
                 viewDrawer.closeDrawer(GravityCompat.START);
+            }
+        });
+        findViewById(R.id.test_funding_section).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO: Implement feature for funding as stated by Abdulhakeem and client
+                startKurePayActivity();
             }
         });
     }
@@ -1233,6 +1241,13 @@ public final class WalletActivity extends AbstractBindServiceActivity
             intent = new Intent(this, UpholdSplashActivity.class);
         }
         intent.putExtra(UpholdAccountActivity.WALLET_RECEIVING_ADDRESS_EXTRA, wallet.currentReceiveAddress().toString());
+        startActivity(intent);
+    }
+
+    private void startKurePayActivity() {
+        Intent intent = new Intent(this, KurePayActivity.class);
+        intent.putExtra(ConstantUtils.WALLET_RECEIVING_ADDRESS_EXTRA, wallet.currentReceiveAddress().toString());
+        intent.putExtra("start", "splash");
         startActivity(intent);
     }
 

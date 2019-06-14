@@ -204,6 +204,10 @@
         <activity android:name="org.dash.wallet.integration.uphold.ui.UpholdAccountActivity"
             android:theme="@style/My.Theme.ChildActivity"/>
 
+        <activity android:name="org.dash.wallet.integration.nepsium.ui.KurePayActivity"
+            android:theme="@style/My.Theme.ChildActivity"
+            android:launchMode="singleTop" />
+
         <provider
             android:name="de.schildbach.wallet.data.AddressBookProvider"
             android:authorities="${applicationId}.address_book"

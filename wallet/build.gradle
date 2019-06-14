@@ -47,12 +47,14 @@ dependencies {
     }
     implementation 'com.github.tony19:logback-android-core:1.1.1-6'
     implementation 'com.google.code.findbugs:jsr305:2.0.3'
+    implementation 'com.android.support:multidex:1.0.3'
 
     implementation project(path: ':common')
     annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
     //releaseImplementation project(path: ':common', configuration: 'release')
     //Uphold Integration
     implementation project(path: ':uphold-integration')
+    implementation project(path: ':nepsium-integration')
     //releaseImplementation project(path: ':uphold-integration', configuration: 'release')
     //Memory Leak Detection
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.1'
@@ -81,7 +83,7 @@ ext {
 
 android {
     compileSdkVersion 28
-    buildToolsVersion '28.0.2'
+    buildToolsVersion '28.0.3'
 
     lintOptions {
         abortOnError false
@@ -90,6 +92,7 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 28
+        multiDexEnabled true
         generatedDensities = ['hdpi', 'xhdpi']
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
@@ -110,6 +113,7 @@ android {
             testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg', 'proguardTest-rules.txt'
         }
         debug {
+            minifyEnabled false
             debuggable true
         }
     }

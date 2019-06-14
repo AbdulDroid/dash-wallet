@@ -71,6 +71,7 @@ import android.os.Build;
 import android.os.StrictMode;
 import android.preference.PreferenceManager;
 import android.support.annotation.StringRes;
+import android.support.multidex.MultiDex;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.format.DateUtils;
 import android.widget.Toast;
@@ -120,6 +121,7 @@ public class WalletApplication extends Application {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         instance = this;
+        MultiDex.install(this);
     }
 
     @Override
